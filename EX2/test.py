@@ -1,18 +1,15 @@
 import pytest
 
-from key_val_swap_solution import swap_dict_keys_and_value_lists
+from dna_solution import get_nucleotides_by_occurrences
 
 def test_empty_input():
-    assert swap_dict_keys_and_value_lists({}) == {}
+    assert get_nucleotides_by_occurrences("") == {}
 
-def test_single_key_single_value():
-    assert swap_dict_keys_and_value_lists({"a": ["b"]}) == {"b": ["a"]}
+def test_normal_input_1():
+    assert get_nucleotides_by_occurrences("AACCGT") == {2: ['A', 'C'], 1: ['G', 'T']}
 
-def test_single_key_multiple_values():
-    assert swap_dict_keys_and_value_lists({"a": ["b", "c"]}) == {"b": ["a"], "c": ["a"]}
-
-def test_multiple_keys_multiple_values():
-    assert swap_dict_keys_and_value_lists({1: [2, 3], 4: [2, 5]}) == {2: [1, 4], 3: [1], 5: [4]}
+def test_normal_input_2():
+    assert get_nucleotides_by_occurrences("AAAACCCGGTTT") == {4: ['A'], 3: ['C', 'T'], 2: ['G']}
     
 if __name__ == "__main__":
     pytest.main()

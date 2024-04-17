@@ -1,6 +1,6 @@
 # iti0102-2024-prooviylesanne 
 
-## EX1 - network_connections_solution
+## EX1 - network_connections
 
 ### Rebranded version of a problem that was given to us in the first KT. (KT1 - iti0102-2023)
     You're given a log of network connection chains between devices. 
@@ -13,16 +13,17 @@
 
     Each device name should appear only once in the list, and the order of devices in the lists or keys in the dictionary is not important.
 
-## EX2 - swap_dict_keys_and_value_lists
+    parse_network_connections("") => {}
+    parse_network_connections("router1:router2,router2:switch1") => {"router1": ["router2"], "router2": ["switch1"]}
 
-### No changes has been done to this one. (1:1 problem from KT3 - iti0102-2023)
+## EX2 - get_nucleotides_by_occurrences
 
-    Swap keys and values in dict.
+### Came up with this one.
 
-    Values are lists.
-    Every element in this list should be a key,
-    and current key will be a value for the new key.
-    Values in the result are lists.
+    Implement a function that categorizes each symbol in the DNA sequence based on its number of occurrences
+    and returns a dictionary where each key is the number of occurrences, 
+    and the value is a list of symbols (nucleotides) that appear with that frequency. 
 
-    Every list in input dict has at least 1 element.
-    The order of the values in the result dict is not important.
+    get_nucleotides_by_occurrences("AACCGT") => {2: ['A', 'C'], 1: ['G', 'T']}
+    get_nucleotides_by_occurrences("AAAACCCGGTTT") => {4: ['A'], 3: ['C', 'T'], 2: ['G']}
+    get_nucleotides_by_occurrences("") => {}
